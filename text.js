@@ -1,3 +1,6 @@
+emailjs.init({
+    publicKey: "NA-VdgDICuUwNJeGq"
+});
 // ==============================
 // CONTACT FORM
 // ==============================
@@ -35,11 +38,15 @@ contactForm.addEventListener("submit", function (event) {
         contactForm.reset();
     })
     .catch(function (error) {
-        console.error("EmailJS Error:", error);
-        alert("Sorry, your message could not be sent.");
-    });
+    console.error("EmailJS Error:", error);
 
+    alert(
+        "EmailJS Error:\n" +
+        (error.text || error.message || JSON.stringify(error))
+    );
 });
+});
+
 
 
 // ==============================
@@ -57,23 +64,28 @@ window.addEventListener("scroll", function () {
     }
 
 });
-// Mobile Navbar
-// Mobile Navbar
+// ==============================
+// MOBILE NAVBAR
+// ==============================
+
 const menuToggle = document.getElementById("menu-toggle");
 const navMenu = document.getElementById("nav-menu");
 
-menuToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-});
+if (menuToggle && navMenu) {
 
-// Close menu after clicking a link
-const navLinks = navMenu.querySelectorAll("a");
-
-navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-        navMenu.classList.remove("active");
+    menuToggle.addEventListener("click", function () {
+        navMenu.classList.toggle("active");
     });
-});
+
+    const navLinks = navMenu.querySelectorAll("a");
+
+    navLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+            navMenu.classList.remove("active");
+        });
+    });
+
+}
 // ==============================
 // SCROLL REVEAL ANIMATION
 // ==============================
@@ -102,4 +114,3 @@ const revealObserver = new IntersectionObserver(
 revealElements.forEach(function (element) {
     revealObserver.observe(element);
 });
-// 
