@@ -452,74 +452,153 @@ footer p {
 /* =========================
    PREMIUM SERVICE CARDS
    ========================= */
-
-.service-card {
-    position: relative;
-    overflow: hidden;
+/* =========================
+   COMPACT FOUNDER SECTION
+   ========================= */
+   /* =========================
+   FOUNDER SECTION
+   ========================= */
+.founder-section {
+    max-width: 1000px;
+    padding-top: 25px;
+    margin-top: -140px;
 }
+.founder-container {
+    margin: 40px auto 0;
 
-.service-card::before {
-    content: "";
+    max-width: 800px;
 
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 2px;
+    padding: 35px 45px;
 
     background: linear-gradient(
-        90deg,
-        transparent,
-        #18bfff,
-        transparent
+        145deg,
+        #0d1428,
+        #080c19
     );
 
-    transform: translateX(-100%);
-    transition: 0.5s;
+    border: 1px solid #1c2740;
+    border-radius: 18px;
+
+    text-align: center;
+
+    transition: 0.3s ease;
 }
 
-.service-card:hover::before {
-    transform: translateX(100%);
+.founder-container:hover {
+    transform: translateY(-4px);
+
+    border-color: #18bfff;
+
+    box-shadow:
+        0 15px 40px rgba(24, 191, 255, 0.10);
 }
 
-.service-number {
+/* Founder Name */
+
+.founder-content h2 {
+    font-size: 34px;
+
+    margin-bottom: 8px;
+}
+
+/* Founder Title */
+
+.founder-content h3 {
+    color: #18bfff;
+
+    font-size: 16px;
+    font-weight: 600;
+
     margin-bottom: 20px;
+}
 
-    font-size: 13px;
+/* Founder Description */
+
+.founder-content > p {
+    color: #929bb5;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    max-width: 680px;
+
+    margin: 0 auto 15px;
+}
+
+/* Vision */
+
+.founder-vision {
+    margin: 25px auto 0;
+
+    padding: 18px 22px;
+
+    max-width: 680px;
+
+    background: #0a1020;
+
+    border: 1px solid #1c2740;
+
+    border-left: 3px solid #18bfff;
+
+    border-radius: 10px;
+
+    text-align: left;
+}
+
+.founder-vision span {
+    display: block;
+
+    color: #18bfff;
+
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 2px;
 
-    color: #18bfff;
+    letter-spacing: 2.5px;
+
+    margin-bottom: 7px;
 }
 
-.service-card h3 {
-    font-size: 21px;
-    margin-bottom: 15px;
-}
-
-.service-card p {
-    min-height: 75px;
-}
-
-.service-link {
-    display: inline-block;
-
-    margin-top: 18px;
-
-    color: #18bfff;
+.founder-vision p {
+    color: #aab3cc;
 
     font-size: 14px;
-    font-weight: 700;
 
-    transition: 0.3s;
-}
+    line-height: 1.6;
 
-.service-card:hover .service-link {
-    transform: translateX(6px);
+    margin: 0;
 }
 
 
+/* =========================
+   FOUNDER MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .founder-container {
+        padding: 28px 22px;
+
+        margin-top: 30px;
+    }
+
+    .founder-content h2 {
+        font-size: 28px;
+    }
+
+    .founder-content h3 {
+        font-size: 14px;
+    }
+
+    .founder-content > p {
+        font-size: 14px;
+    }
+
+    .founder-vision {
+        padding: 16px;
+    }
+
+}
 /* MOBILE */
 
 @media (max-width: 800px) {
@@ -2246,4 +2325,16 @@ footer p {
         padding: 40px 20px;
     }
 
+}
+/* SERVICE LINKS */
+
+.service-link {
+    color: #18bfff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.service-link:hover {
+    color: #ffffff;
 }
